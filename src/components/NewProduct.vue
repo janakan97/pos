@@ -33,12 +33,12 @@
                         <label>Cost Price  </label>
                     </div>
                 </div> -->
-                 <div class="row">
+                 <!-- <div class="row">
                     <div class="input-field col s12">
                         <input type="text" v-model="sellingPrice" required>
                         <label>Selling Price  </label>
                     </div>
-                </div>
+                </div> -->
                  <div class="row">
                     <div class="input-field col s12">
                         <input type="text" v-model="size" required>
@@ -88,8 +88,8 @@ export default {
                 size:this.size,
                 quantity:this.quantity,
                 buyingPrice:this.buyingPrice,
-                sellingPrice:this.sellingPrice,
                 costPrice:parseInt(this.buyingPrice*0.02)+parseInt(this.buyingPrice),
+                sellingPrice:parseInt(this.costPrice*0.45)+parseInt(this.costPrice),
                 description:this.description
 
             })

@@ -24,6 +24,9 @@
                      <router-link class="secondary-content" v-bind:to="{name:'view-product',params:{product_id: product.product_id}}">
                   <i class="fa fa-eye"></i>
               </router-link>
+               <router-link class="secondary-content" v-bind:to="{name:'barcode-product',params:{product_id: product.product_id}}">
+                  <i class="fa fa-barcode"></i>
+              </router-link>
               </td>
                 </tr>
                 </table>

@@ -6,7 +6,9 @@ import EditProduct from '@/components/EditProduct'
 import ViewProduct from '@/components/ViewProduct'
 import Login from '@/components/Login'
 import Register from '@/components/Register'
+import Barcode from '@/components/Barcode'
 import firebase from 'firebase'
+
 Vue.use(Router)
 
 let router= new Router({
@@ -47,12 +49,20 @@ let router= new Router({
       }
     },
     {
-      path: '/:product_id',
+      path: '/view/:product_id',
       name: 'view-product',
       component: ViewProduct,meta:{
         requiresAuth:true
       }
     },
+    {
+      path: '/barcode-product/:product_id',
+      name: 'barcode-product',
+      component: Barcode,meta:{
+        requiresAuth:true
+      
+      }
+    }
   ]
 })
 

@@ -5,6 +5,12 @@
             <form @submit.prevent="updateProduct" class="col s12">
                 <div class="row">
                     <div class="input-field col s12">
+                        <input   type="text" v-model="product_id" required>
+                  
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
                         <input type="text" v-model="name" required>
                     
                     </div>
@@ -19,12 +25,6 @@
                     <div class="input-field col s12">
                         <input type="text" v-model="buyingPrice" required>
           
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input  disabled type="text" v-model="product_id" required>
-                  
                     </div>
                 </div>
                 <div class="row">
@@ -68,7 +68,7 @@ export default {
           name:null,
           quantity:null,
           size:null ,
-           buyingPrice:null,
+          buyingPrice:null,
           sellingPrice:null,
           costPrice:null,
           description:null  
@@ -82,6 +82,9 @@ export default {
                     vm.name = doc.data().name
                     vm.quantity = doc.data().quantity
                     vm.size = doc.data().size
+                    vm.buyingPrice=doc.data().buyingPrice
+                    vm.sellingPrice=doc.data().sellingPrice
+                    vm.costPrice=doc.data().costPrice
                 })
             })
         })
@@ -99,6 +102,9 @@ export default {
                     this.name =doc.data().name
                     this.quantity=doc.data().quantity
                     this.size=doc.data().size
+                    this.costPrice=doc.data().costPrice
+                    this.buyingPrice=doc.data().buyingPrice
+                    this.sellingPrice=doc.data().sellingPrice
                 })
             })
         },
@@ -110,7 +116,11 @@ export default {
                       product_id: this.product_id,
                       name:this.name,
                       size: this.size,
-                      quantity:this.quantity
+                      quantity:this.quantity,
+                      costPrice:this.costPrice,
+                      buyingPrice:this.buyingPrice,
+                      sellingPrice:this.sellingPrice
+
                   }).then(() =>{
                       this.$router.push({name:'view-product',params:{product_id: this.product_id}})
                   })
