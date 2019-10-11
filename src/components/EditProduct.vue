@@ -64,7 +64,7 @@ export default {
     name:'edit-product',
     data(){
         return{
-                  product_id:null,
+          product_id:null,
           name:null,
           quantity:null,
           size:null ,

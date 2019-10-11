@@ -75,8 +75,8 @@ export default {
           quantity:null,
           size:null ,
           buyingPrice:null,
-          sellingPrice:null,
-         // costPrice:buyingPrice*0.02,
+          costPrice:null,
+          sellingPrice:null,   
           description:null
                        }
     },
@@ -89,7 +89,7 @@ export default {
                 quantity:this.quantity,
                 buyingPrice:this.buyingPrice,
                 costPrice:parseInt(this.buyingPrice*0.02)+parseInt(this.buyingPrice),
-                sellingPrice:parseInt(this.costPrice*0.45)+parseInt(this.costPrice),
+                sellingPrice:parseInt(this.buyingPrice*0.47)+parseInt(this.buyingPrice),
                 description:this.description
 
             })
