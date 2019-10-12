@@ -12,6 +12,7 @@
                  <th>Cost Price </th>
                  <th>Selling Price </th>
                  <th>Size</th>
+                 <th>Action</th>
                 </tr>
                 <tr v-for="product in   filteredProducts.sort((a,b)=>{return b.product_id - a.product_id})  "  v-bind:key="product.id" class="collection-item">
                     <td>{{product.product_id}}</td>
@@ -20,13 +21,21 @@
                     <td>{{product.buyingPrice}}</td>
                     <td>{{product.costPrice}}</td>
                     <td>{{product.sellingPrice}}</td>
-                    <td>{{product.size}}
-                     <router-link class="secondary-content" v-bind:to="{name:'view-product',params:{product_id: product.product_id}}">
-                  <i class="fa fa-eye"></i>
-              </router-link>
-               <router-link class="secondary-content" v-bind:to="{name:'barcode-product',params:{product_id: product.product_id}}">
-                  <i class="fa fa-barcode"></i>
-              </router-link>
+                    <td>{{product.size}}</td>
+                    <td>
+                        <div>
+                              <router-link class="secondary-content" v-bind:to="{name:'barcode-product',params:{product_id: product.product_id}}">
+                                     <i class="fa fa-barcode"></i>
+                               </router-link>
+                        </div>
+          
+                        <div>
+                           <router-link class="secondary-content" v-bind:to="{name:'view-product',params:{product_id: product.product_id}}">
+                              <i class="fa fa-eye"></i>
+                           </router-link>
+                        </div>
+          
+           
               </td>
                 </tr>
                 </table>
