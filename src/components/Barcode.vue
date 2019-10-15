@@ -1,11 +1,23 @@
 <template>
     <div id="barcode-product">
-     
-  <barcode  v-model="product_id" :options="{ displayValue: false }"> </barcode>
-              {{product_id}}
-              {{sellingPrice}}
-              {{costPrice}}
+
+      <div id="printMe">
+      <div>
+            {{sellingPrice}}
+              {{costPrice}}  
+      </div>
+  <barcode  v-model="product_id" :options="{ displayValue: true }" tag="img" > 
+       
+  </barcode>
+
+ 
+          
+       </div>
+    <div>
+                  <button @click="print">PRINT</button>
+    </div>
     </div> 
+   
 </template>
 
 <script >
@@ -18,7 +30,8 @@ export default {
         return {
         product_id:null,
         sellingPrice:null,
-        costPrice:null
+        costPrice:null,
+      //  costPricecode:encoding(costPrice) 
     }
 
 }
@@ -30,16 +43,24 @@ export default {
                     vm.product_id =doc.data().product_id
                     vm.sellingPrice=doc.data().sellingPrice
                     vm.costPrice=doc.data().costPrice
-                       console.log(vm.product_id)
+                    //   console.log(vm.product_id)
                 })
             })
         })
+    
 
     },
     methods:{
-    encoding(){
-this.costPrice=150
-  }
+   print() {
+      // Pass the element id here
+      this.$htmlToPaper('printMe');
+    },
+    encoding(x){
+    console.log(costPrice)
+    }
+    },
+      created ()  {
+   // console.log(costPrice)
     }
 
 
