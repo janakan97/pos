@@ -1,51 +1,27 @@
 <template>
     <div id="dashboard">
-        <div>
-                <input type="text" v-model="search" placeholder="search products by name" />
-               <table class="responsive-table">
-                <caption>Products</caption>
-                <tr>
-                 <th>ID</th>
-                 <th> Name</th>
-                 <th>  Quantity</th>
-                 <th> Buying Price </th>
-                 <th>Cost Price </th>
-                 <th>Selling Price </th>
-                 <th>Size</th>
-                 <th>Action</th>
-                </tr>
-                <tr v-for="product in   filteredProducts.sort((a,b)=>{return b.product_id - a.product_id})  "  v-bind:key="product.id" class="collection-item">
-                    <td>{{product.product_id}}</td>
-                    <td>{{product.name}}</td>
-                    <td>{{product.quantity}}</td>
-                    <td>{{product.buyingPrice}}</td>
-                    <td>{{product.costPrice}}</td>
-                    <td>{{product.sellingPrice}}</td>
-                    <td>{{product.size}}</td>
-                    <td>
-                        <div>
-                              <router-link class="secondary-content" v-bind:to="{name:'barcode-product',params:{product_id: product.product_id}}">
-                                     <i class="fa fa-barcode"></i>
-                               </router-link>
-                        </div>
-          
-                        <div>
-                           <router-link class="secondary-content" v-bind:to="{name:'view-product',params:{product_id: product.product_id}}">
-                              <i class="fa fa-eye"></i>
-                           </router-link>
-                        </div>
-          
-           
-              </td>
-                </tr>
-                </table>
-        </div>
-      
-        <div class="fixed-action-btn">
-            <router-link to='/new' class="btn-floating btn-large red">
-            <i class="fa fa-plus"></i>
-            </router-link>
+       <div class="row">
+    <div class="col s12 m6 .xl12">
+      <div class=" waves-dark btn-large green">
+            <router-link to='/add' > Product Management   </router-link>
         </div> 
+    </div>
+      <div class="col s12 m6 .xl12">
+      <div class=" waves-dark btn-large green">
+            <router-link to='/add' >Cheque Maintaining   </router-link>
+        </div> 
+    </div>
+  </div>
+        <div class="row">
+    <div class="col s12 m6 .xl12">
+      <div class=" waves-dark btn-large green">
+            <router-link to='/add' >Billing   </router-link>
+        </div> 
+    </div>
+     
+  </div>
+      
+        
     </div> 
 </template>
 
