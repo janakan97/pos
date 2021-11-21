@@ -15,7 +15,7 @@ Vue.use(Router)
 let router= new Router({
   routes: [
     {
-      path: '/',
+      path: '/dashboard',
       name: 'dashboard',
       component: Dashboard,meta:{
         requiresAuth:true
