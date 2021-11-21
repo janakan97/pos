@@ -4,7 +4,7 @@ import Dashboard from '@/components/Dashboard'
 import NewProduct from '@/components/NewProduct'
 import EditProduct from '@/components/EditProduct'
 import ViewProduct from '@/components/ViewProduct'
-//import AddProduct from '@/components/AddProduct'
+import ProductInventory from '@/components/ProductInventory'
 import Login from '@/components/Login'
 import Register from '@/components/Register'
 import Barcode from '@/components/Barcode'
@@ -65,9 +65,9 @@ let router= new Router({
       }
     },
     {
-      path: '/add',
-      name: 'add-product',
-      component: AddProduct,meta:{
+      path: '/ProductInventory',
+      name: 'Product-Inventory',
+      component: ProductInventory,meta:{
         requiresAuth:true
       }
     }

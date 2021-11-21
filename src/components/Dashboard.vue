@@ -3,19 +3,19 @@
        <div class="row">
     <div class="col s12 m6 .xl12">
       <div class=" waves-dark btn-large green">
-            <router-link to='/add' > Product Management   </router-link>
+            <router-link to='/ProductInventory' > Product Management   </router-link>
         </div> 
     </div>
       <div class="col s12 m6 .xl12">
       <div class=" waves-dark btn-large green">
-            <router-link to='/add' >Cheque Maintaining   </router-link>
+            <router-link to='/ProductInventory' >Cheque Maintaining   </router-link>
         </div> 
     </div>
   </div>
         <div class="row">
     <div class="col s12 m6 .xl12">
       <div class=" waves-dark btn-large green">
-            <router-link to='/add' >Billing   </router-link>
+            <router-link to='/ProductInventory' >Billing   </router-link>
         </div> 
     </div>
      
