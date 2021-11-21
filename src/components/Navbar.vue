@@ -2,7 +2,7 @@
     <nav>
     <div class="nav-wrapper green">
         <div class="container">
-             <router-link to='/' class="brand-logo">MPVS</router-link>
+             <router-link to='/' class="brand-logo">anjanayar</router-link>
              <ul class="right">
                  <li  v-if="isLoggedIn"><span class="email black-text">{{currentUser}}</span></li>
                  <li v-if="isLoggedIn"><router-link to="/">Dashboard</router-link></li>
